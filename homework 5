@@ -1,0 +1,14 @@
+def read_file(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as file:
+            content = file.read()
+            print(content)
+    except FileNotFoundError:
+        print(f"Помилка: файл '{path}' не знайдено.")
+    except PermissionError:
+        print(f"Помилка: недостатньо прав для читання файлу '{path}'.")
+    except Exception as e:
+        print(f"Невідома помилка: {e}")
+
+# Приклад виклику
+read_file("example.txt")
